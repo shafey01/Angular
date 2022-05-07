@@ -1,4 +1,28 @@
 <p>products works!</p>
+
+<div >
+    <table >
+        <thead>
+            <th>ID  </th>
+            <th> | Name</th>
+            <th> | Quantity</th>
+            <th> | Price</th>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let products of ProductList">
+                <td>{{products.ID}}</td>
+                <td> | {{products.Name | lowercase}}</td>
+                <td> | {{products.Quantity}}</td>
+                <td> | {{products.Price}}</td>
+
+    
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
 <p> {{Store_name}} </p>
 
 <img [src]="Store_Logo" alt="">
@@ -31,18 +55,45 @@
 <br>
 <br>
 
+<h2>two way binding</h2>
+Enter your name
+<input type="text" [(ngModel)] = "ClientName2"/>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div *ngIf="tableshow else Thanks">
+    <table >
+        <thead>
+            <th>Name  </th>
+            <th> | price</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td>{{item.name}}</td>
+                <td> | {{item.price}}</td>
+                
+    
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
-<table>
-    <thead>
-        <th>Name  </th>
-        <th> | price</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of items">
-            <td>{{item.name}}</td>
-            <td> | {{item.price}}</td>
+<ng-template #Thanks> <h1> Thanks for purchasing from our Store : {{ClientName2}}</h1></ng-template>
 
-        </tr>
-    </tbody>
-</table>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<div>
+    <button (click)="Show()"  >Buy</button>
+{{tableshow}}
+</div>

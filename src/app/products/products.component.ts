@@ -15,8 +15,8 @@ export class ProductsComponent implements OnInit {
   Discount: string = DiscountOffers.offer_2;
   Store_name: string = "shafey";
   Store_Logo: string = "../../assets/bleach";
-  ProductList: IProduct[] = [{ID:2, Name: "a", Quantity: 20, Price: 100, img: " "},
-                             {ID:3, Name: "b", Quantity: 30, Price: 200, img: " "} ];
+  ProductList: IProduct[] = [{ID:2, Name: "Apple", Quantity: 20, Price: 100, img: " "},
+                             {ID:3, Name: "RedHat", Quantity: 30, Price: 200, img: " "} ];
   CategoryList: ICategory = {ID:1, Name: "p_one"};
   ClientName: string = " axxxx";
   IsPurshased: boolean = true;
@@ -32,6 +32,16 @@ export class ProductsComponent implements OnInit {
     {"name": "item 3", "price":"300"},
 
   ]
+
+  ClientName2:string="Guest";
+
+  tableshow: boolean = true;
+
+  Show() {
+
+    this.tableshow = ! this.tableshow;
+    
+    }
   ngOnInit(): void {
   }
 
