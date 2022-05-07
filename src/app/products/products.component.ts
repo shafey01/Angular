@@ -12,7 +12,7 @@ export class ProductsComponent implements OnInit {
 
   constructor() { }
 
-  Discount: DiscountOffers = DiscountOffers.offer_2;
+  Discount: string = DiscountOffers.offer_2;
   Store_name: string = "shafey";
   Store_Logo: string = "../../assets/bleach";
   ProductList: IProduct[] = [{ID:2, Name: "a", Quantity: 20, Price: 100, img: " "},
@@ -21,6 +21,17 @@ export class ProductsComponent implements OnInit {
   ClientName: string = " axxxx";
   IsPurshased: boolean = true;
 
+  categories = [
+    "categorie 1", "categorie 2", "categorie 3"
+  ]
+
+
+  items = [
+    {"name": "item 1", "price":"100"},
+    {"name": "item 2", "price":"200"},
+    {"name": "item 3", "price":"300"},
+
+  ]
   ngOnInit(): void {
   }
 

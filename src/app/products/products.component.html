@@ -3,4 +3,46 @@
 
 <img [src]="Store_Logo" alt="">
 
-<h3>We offer an explicit discount of: {{Discount}}</h3>
+<br>
+
+<div *ngIf="Discount == 'No_Discount';else discount">
+     
+</div>
+
+<ng-template #discount> We offer an explicit discount of: {{Discount | percent}} </ng-template>
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+<select >
+    <option *ngFor="let categorie of categories">
+      {{categorie}}
+    </option>
+</select>
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+<table>
+    <thead>
+        <th>Name  </th>
+        <th> | price</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items">
+            <td>{{item.name}}</td>
+            <td> | {{item.price}}</td>
+
+        </tr>
+    </tbody>
+</table>
